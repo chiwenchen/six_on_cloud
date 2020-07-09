@@ -4,7 +4,7 @@
 bundle exec rake assets:precompile
 
 # Wait for database to be ready
-until nc -z -v -w30 $MYSQL_HOST $MYSQL_PORT; do
+until nc -z -v -w30 localhost 3306; do
  echo 'Waiting for MySQL...'
  sleep 1
 done
