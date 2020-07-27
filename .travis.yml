@@ -10,6 +10,7 @@ services:
   - mysql
 before_script:
   - bundle install
-  - bundle exec rake db:create db:migrate
+  - bundle exec rake db:create
+  - bundle exec rake db:test:prepare
 script:
   - bundle exec rspec .
