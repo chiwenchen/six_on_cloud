@@ -9,8 +9,6 @@ before_install:
 services:
   - mysql
 before_script:
-  - apt-get update 
-  - apt-get install idn
   - bundle install
   - bundle exec rake db:create
   - bundle exec rake db:test:prepare
