@@ -1,7 +1,15 @@
 language: ruby
 rvm:
  - 2.6.3
+cache:
+  - bundler
+  - yarn
 before_install:
   - gem install bundler
+services:
+  - mysql
+before_script:
+  - bundle install
+  - bundle exec rake db:create db:migrate
 script:
   - rspec .
