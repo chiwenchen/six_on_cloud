@@ -6,11 +6,16 @@
 #
 default: &default
   adapter: mysql2
-  pool: 3306
+  port: 3306
   timeout: 5000
   socket: /tmp/mysql.sock
   username: root
+  host: localhost
 
 development:
   <<: *default
   database: six_on_cloud_development
+
+test:
+  <<: *default
+  database: six_on_cloud_test
